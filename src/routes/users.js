@@ -7,6 +7,7 @@ const signin = require("../middlewares/users/AuthSignin");
 const signup = require("../middlewares/users/AuthSignup");
 const addAdmin = require("../middlewares/users/AuthSignup/authaddAdimn");
 const isBlocked = require("../middlewares/users/checkBlackList");
+const editAdmin = require("../middlewares/users/EditAdmin");
 const findUser = require("../middlewares/users/FindUser");
 const isAdmin = require("../middlewares/users/IsAdmin");
 const resetpassword = require("../middlewares/users/ResetPassword");
@@ -32,6 +33,11 @@ router.post("/signup", signup, (req, res) => {
 router.post("/addAdmin", addAdmin, (req, res) => {
   res.status(200).send(req.users);
 });
+
+router.put("/editAdmin/:id", auth,editAdmin , (req, res) => {
+  res.status(200).send(req.updateduser);
+});
+
 
 router.post("/signin", signin, (req, res) => {
   res.status(200).send(req.users);
