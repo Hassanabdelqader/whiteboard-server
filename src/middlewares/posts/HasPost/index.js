@@ -16,6 +16,8 @@ const hasUser = async (req, res, hasan) => {
         return hasan();
     }
     return res.status(404).send("you are not autohir");
+
+    let x = 0;
   } catch (error) {
     console.log("has Uer",error)
     hasan("error");
