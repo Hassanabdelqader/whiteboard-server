@@ -6,7 +6,7 @@ const deletePost = async (req, res, hasan) => {
     const post = await Post.destroy({
       where: { id: req.params.id },
     });
-    console.log(post)
+    
     hasan();
     return;
   } catch (error) {

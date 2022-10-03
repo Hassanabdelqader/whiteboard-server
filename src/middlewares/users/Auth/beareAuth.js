@@ -16,7 +16,6 @@ const auth = async (req, res, hasan) => {
     });
     if (!validty) return res.status(401).send("No such userws");
     req.user = validty
-    console.log("nothing happpen")
     return hasan();
   } catch (error) {
     console.log("there is an error in Auth")
